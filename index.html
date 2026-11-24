@@ -1,0 +1,1196 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>小小绘推特黑料 - 官方视频门户 | 真实记录与社区澄清平台</title>
+<meta name="description" content="小小绘推特黑料官方网站，以原创高清视频与深度访谈呈现真实故事，专注网络舆情澄清与创作者生态建设，值得信赖的内容社区平台。">
+<link rel="icon" href="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23c62828'/%3E%3Cpath d='M18 44V20h8l6 12 6-12h8v24h-7V31l-5 10h-4l-5-10v13z' fill='%23fff'/%3E%3C/svg%3E">
+<style>
+:root{
+  --xh-ink:#15161a;
+  --xh-paper:#f4f4f2;
+  --xh-white:#ffffff;
+  --xh-red:#c62828;
+  --xh-red-dark:#8e1b1b;
+  --xh-grey:#6a6d75;
+  --xh-line:#dcdcd8;
+  --xh-soft:#ebebe7;
+  --xh-radius:4px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Helvetica Neue",Arial,"PingFang SC","Microsoft YaHei",sans-serif;
+  background:var(--xh-paper);
+  color:var(--xh-ink);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+.xh-wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+
+/* ---------- sticky top ---------- */
+.xh-sticky{position:sticky;top:0;z-index:80;box-shadow:0 1px 0 rgba(0,0,0,.06)}
+.xh-announce{
+  background:var(--xh-ink);
+  color:#f0f0ee;
+  font-size:13px;
+  letter-spacing:.3px;
+}
+.xh-announce .xh-wrap{display:flex;gap:14px;align-items:center;justify-content:space-between;padding-top:8px;padding-bottom:8px;flex-wrap:wrap}
+.xh-announce strong{color:#ff8a80;font-weight:700}
+.xh-announce-list{display:flex;gap:22px;flex-wrap:wrap;font-size:12.5px}
+.xh-announce-list span{opacity:.86}
+.xh-announce-tag{background:var(--xh-red);color:#fff;padding:1px 8px;border-radius:2px;font-size:11px;letter-spacing:1px;margin-right:8px}
+
+.xh-header{background:var(--xh-white);border-bottom:1px solid var(--xh-line)}
+.xh-head-inner{display:flex;align-items:center;gap:26px;padding:16px 24px;max-width:1180px;margin:0 auto}
+.xh-brand{display:flex;align-items:center;gap:11px;font-weight:800;font-size:19px;letter-spacing:1px;white-space:nowrap}
+.xh-brand-mark{width:38px;height:38px;border-radius:4px;background:var(--xh-red);display:grid;place-items:center;color:#fff;font-size:19px;font-weight:900;flex:0 0 auto}
+.xh-brand small{display:block;font-size:10px;font-weight:500;letter-spacing:2.5px;color:var(--xh-grey)}
+.xh-nav{display:flex;gap:22px;font-size:14.5px;font-weight:600;margin-left:auto}
+.xh-nav a{padding:6px 2px;border-bottom:2px solid transparent;transition:.2s}
+.xh-nav a:hover{color:var(--xh-red);border-bottom-color:var(--xh-red)}
+.xh-search{display:flex;align-items:center;background:var(--xh-soft);border:1px solid var(--xh-line);border-radius:3px;padding:0 4px 0 12px;min-width:190px}
+.xh-search input{background:none;border:none;outline:none;padding:8px 4px;font-size:13px;width:100%;color:var(--xh-ink)}
+.xh-search button{background:var(--xh-ink);color:#fff;font-size:12.5px;padding:6px 12px;border-radius:2px;letter-spacing:1px}
+.xh-nav-toggle{display:none;font-size:22px;padding:4px 8px;border:1px solid var(--xh-line);border-radius:3px}
+
+/* search feedback */
+.xh-search-fb{display:none;background:#fff8e1;border:1px solid #f0d78c;color:#7a5a00;font-size:13px;padding:8px 14px;border-radius:3px;margin:10px 24px 0}
+
+/* ---------- hero ---------- */
+.xh-hero{background:var(--xh-white);border-bottom:1px solid var(--xh-line);padding:54px 0 60px}
+.xh-hero-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,5fr);gap:52px;align-items:center}
+.xh-kicker{display:inline-flex;align-items:center;gap:10px;font-size:12px;letter-spacing:3px;color:var(--xh-red);font-weight:700;margin-bottom:18px;text-transform:uppercase}
+.xh-kicker::before{content:"";width:34px;height:2px;background:var(--xh-red)}
+.xh-hero h1{font-size:clamp(34px,5.4vw,58px);line-height:1.1;letter-spacing:-1px;font-weight:900;margin-bottom:20px}
+.xh-hero h1 em{font-style:normal;color:var(--xh-red);display:inline-block}
+.xh-hero-lead{font-size:16px;color:#3c3f45;margin-bottom:18px;max-width:34em}
+.xh-hero-intro{font-size:14px;color:var(--xh-grey);border-left:3px solid var(--xh-red);padding-left:16px;margin-bottom:26px}
+.xh-hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:34px}
+.xh-btn{display:inline-flex;align-items:center;gap:8px;padding:13px 24px;font-size:14px;font-weight:700;letter-spacing:1px;border-radius:3px;transition:.18s}
+.xh-btn-primary{background:var(--xh-red);color:#fff}
+.xh-btn-primary:hover{background:var(--xh-red-dark);transform:translateY(-2px)}
+.xh-btn-ghost{border:1.5px solid var(--xh-ink);color:var(--xh-ink)}
+.xh-btn-ghost:hover{background:var(--xh-ink);color:#fff;transform:translateY(-2px)}
+.xh-stats{display:flex;gap:0;border-top:1px solid var(--xh-line);padding-top:22px}
+.xh-stat{flex:1;min-width:0}
+.xh-stat b{display:block;font-size:26px;font-weight:900;letter-spacing:-.5px}
+.xh-stat span{font-size:12px;color:var(--xh-grey);letter-spacing:.5px}
+.xh-hero-visual{position:relative}
+.xh-hero-visual .xh-hero-img{border-radius:var(--xh-radius);overflow:hidden;box-shadow:0 18px 44px -18px rgba(21,22,26,.4)}
+.xh-hero-badge{position:absolute;left:-14px;bottom:26px;background:var(--xh-ink);color:#fff;padding:12px 18px;font-size:12.5px;letter-spacing:1.5px;border-radius:3px;box-shadow:0 10px 24px -10px rgba(0,0,0,.5)}
+.xh-hero-badge b{color:#ff8a80}
+
+/* ---------- generic section ---------- */
+.xh-section{padding:64px 0}
+.xh-section.alt{background:var(--xh-white);border-top:1px solid var(--xh-line);border-bottom:1px solid var(--xh-line)}
+.xh-sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:36px;flex-wrap:wrap}
+.xh-sec-head h2{font-size:clamp(24px,3.2vw,34px);font-weight:900;letter-spacing:-.5px;line-height:1.2}
+.xh-sec-head h2 span{color:var(--xh-red)}
+.xh-sec-head p{font-size:14px;color:var(--xh-grey);max-width:40em}
+.xh-sec-index{font-size:12px;letter-spacing:2px;color:var(--xh-red);font-weight:700;margin-bottom:8px}
+
+/* ---------- focus module ---------- */
+.xh-focus-grid{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,4fr);gap:34px}
+.xh-focus-main{background:var(--xh-white);border:1px solid var(--xh-line);border-radius:var(--xh-radius);overflow:hidden;display:flex;flex-direction:column}
+.xh-focus-main figure{margin:0;overflow:hidden;position:relative}
+.xh-focus-main img{width:100%;aspect-ratio:16/9;object-fit:cover;transition:transform .5s}
+.xh-focus-main:hover img{transform:scale(1.03)}
+.xh-focus-body{padding:24px 26px 26px}
+.xh-focus-body h3{font-size:23px;line-height:1.35;margin-bottom:12px;font-weight:800}
+.xh-focus-body p{font-size:14px;color:#44474e;margin-bottom:16px}
+.xh-tagrow{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.xh-tag{font-size:11.5px;letter-spacing:.5px;background:var(--xh-soft);color:#4b4e56;padding:3px 10px;border-radius:2px}
+.xh-tag.hot{background:#fde8e6;color:var(--xh-red)}
+.xh-meta{display:flex;align-items:center;gap:16px;font-size:12.5px;color:var(--xh-grey);flex-wrap:wrap}
+.xh-meta b{color:var(--xh-ink);font-weight:700}
+.xh-list-side{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--xh-line)}
+.xh-side-item{display:flex;gap:16px;padding:18px 0;border-bottom:1px solid var(--xh-line);align-items:flex-start}
+.xh-side-num{font-size:26px;font-weight:900;color:var(--xh-line);line-height:1;flex:0 0 auto;width:34px;letter-spacing:-1px}
+.xh-side-item:hover .xh-side-num{color:var(--xh-red)}
+.xh-side-item h4{font-size:15.5px;line-height:1.45;font-weight:700;margin-bottom:6px}
+.xh-side-item p{font-size:12.5px;color:var(--xh-grey);line-height:1.6}
+
+/* ---------- video list ---------- */
+.xh-video-mega{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr);gap:36px;align-items:start}
+.xh-video-hero{background:var(--xh-white);border:1px solid var(--xh-line);border-radius:var(--xh-radius);overflow:hidden}
+.xh-video-hero img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.xh-video-hero figcaption{padding:20px 22px 22px}
+.xh-video-hero h3{font-size:19px;line-height:1.4;margin-bottom:9px;font-weight:800}
+.xh-video-hero p{font-size:13px;color:#4b4e56;margin-bottom:12px}
+.xh-video-list{display:flex;flex-direction:column;border-top:1px solid var(--xh-line)}
+.xh-vlink{padding:17px 0;border-bottom:1px solid var(--xh-line);display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px 16px;align-items:start;transition:.15s}
+.xh-vlink:hover{background:#fafaf8;padding-left:8px}
+.xh-vlink h4{font-size:15px;font-weight:700;line-height:1.45;margin-bottom:5px}
+.xh-vlink p{font-size:12.5px;color:var(--xh-grey);line-height:1.6;margin-bottom:8px;grid-column:1/-1}
+.xh-vlink .xh-meta{grid-column:1/-1}
+.xh-vlink-actions{display:flex;gap:6px;align-items:center}
+.xh-icon-btn{border:1px solid var(--xh-line);border-radius:2px;font-size:12px;padding:4px 9px;color:#4b4e56;transition:.15s;white-space:nowrap}
+.xh-icon-btn:hover{border-color:var(--xh-red);color:var(--xh-red)}
+.xh-icon-btn.on{background:var(--xh-red);border-color:var(--xh-red);color:#fff}
+
+/* ---------- index / articles ---------- */
+.xh-index-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px}
+.xh-article{background:var(--xh-white);border:1px solid var(--xh-line);border-radius:var(--xh-radius);overflow:hidden;display:flex;flex-direction:column;transition:.2s}
+.xh-article:hover{transform:translateY(-4px);box-shadow:0 16px 32px -20px rgba(21,22,26,.35)}
+.xh-article figure{margin:0;overflow:hidden}
+.xh-article img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.xh-article-body{padding:18px 20px 22px;display:flex;flex-direction:column;flex:1}
+.xh-article-body h3{font-size:16.5px;line-height:1.42;font-weight:800;margin-bottom:9px}
+.xh-article-body p{font-size:13px;color:#4b4e56;flex:1;margin-bottom:14px}
+
+/* ---------- author matrix ---------- */
+.xh-author-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.xh-author{background:var(--xh-white);border:1px solid var(--xh-line);border-radius:var(--xh-radius);padding:24px;display:flex;gap:18px;transition:.18s}
+.xh-author:hover{border-color:var(--xh-red)}
+.xh-avatar{width:66px;height:66px;border-radius:50%;flex:0 0 auto;display:grid;place-items:center;font-weight:900;font-size:24px;color:#fff;letter-spacing:-1px}
+.xh-author-main{min-width:0}
+.xh-author-main h3{font-size:16.5px;font-weight:800;margin-bottom:2px}
+.xh-author-role{font-size:11.5px;letter-spacing:1px;color:var(--xh-red);font-weight:700;margin-bottom:8px}
+.xh-author-main p{font-size:13px;color:#4b4e56;line-height:1.7;margin-bottom:10px}
+.xh-author-stats{display:flex;gap:18px;font-size:12px;color:var(--xh-grey)}
+.xh-author-stats b{color:var(--xh-ink)}
+
+/* ----------专题 ---------- */
+.xh-special{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,6fr);gap:34px}
+.xh-special-card{background:var(--xh-ink);color:#eee;border-radius:var(--xh-radius);padding:30px;display:flex;flex-direction:column;position:relative;overflow:hidden}
+.xh-special-card::after{content:"";position:absolute;width:220px;height:220px;right:-90px;top:-90px;border:2px solid rgba(255,255,255,.1);border-radius:50%}
+.xh-special-card .xh-sec-index{color:#ff8a80}
+.xh-special-card h3{font-size:22px;line-height:1.35;margin-bottom:14px;font-weight:900}
+.xh-special-card p{font-size:13.5px;line-height:1.75;color:#c9c9c6;margin-bottom:20px}
+.xh-special-status{font-size:12px;letter-spacing:1px;background:rgba(255,255,255,.1);padding:5px 12px;border-radius:2px;align-self:flex-start;margin-bottom:20px}
+.xh-special-list{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--xh-line)}
+.xh-special-item{padding:18px 0;border-bottom:1px solid var(--xh-line);display:flex;gap:16px;align-items:flex-start}
+.xh-special-item span.xh-dot{width:8px;height:8px;background:var(--xh-red);border-radius:50%;margin-top:9px;flex:0 0 auto}
+.xh-special-item h4{font-size:15.5px;font-weight:700;margin-bottom:4px}
+.xh-special-item p{font-size:12.5px;color:var(--xh-grey);line-height:1.65}
+
+/* ---------- long article ---------- */
+.xh-long{max-width:none}
+.xh-long-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:0}
+.xh-long h3{font-size:20px;font-weight:800;margin:34px 0 14px;line-height:1.35;padding-left:14px;border-left:4px solid var(--xh-red)}
+.xh-long h3:first-child{margin-top:0}
+.xh-long p{font-size:15px;color:#33363c;margin-bottom:15px;line-height:1.95}
+.xh-long strong{color:var(--xh-red-dark)}
+.xh-quote{background:var(--xh-white);border-left:4px solid var(--xh-ink);padding:20px 24px;font-size:14.5px;color:#3c3f45;margin:24px 0;font-style:normal;border-radius:0 3px 3px 0}
+.xh-quote b{display:block;font-style:normal;font-size:12px;letter-spacing:1.5px;color:var(--xh-grey);margin-top:10px;font-weight:600}
+
+/* ---------- review ---------- */
+.xh-review-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.xh-review{background:var(--xh-white);border:1px solid var(--xh-line);border-radius:var(--xh-radius);padding:22px;position:relative}
+.xh-review::before{content:"“";position:absolute;right:18px;top:2px;font-size:52px;font-family:Georgia,serif;color:var(--xh-line);line-height:1}
+.xh-review-stars{color:var(--xh-red);font-size:13px;letter-spacing:2px;margin-bottom:8px}
+.xh-review p{font-size:13.5px;color:#3c3f45;line-height:1.8;margin-bottom:12px;position:relative}
+.xh-review-who{font-size:12px;color:var(--xh-grey);display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.xh-review-who b{color:var(--xh-ink)}
+
+/* ---------- news / faq ---------- */
+.xh-two-col{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:44px}
+.xh-news-item{display:flex;gap:18px;padding:16px 0;border-bottom:1px solid var(--xh-line)}
+.xh-news-date{font-size:12px;color:var(--xh-red);font-weight:800;letter-spacing:1px;flex:0 0 auto;width:74px;padding-top:2px}
+.xh-news-item h4{font-size:14.5px;font-weight:700;line-height:1.5;margin-bottom:4px}
+.xh-news-item p{font-size:12.5px;color:var(--xh-grey);line-height:1.6}
+.xh-faq details{background:var(--xh-white);border:1px solid var(--xh-line);border-radius:3px;margin-bottom:10px;overflow:hidden}
+.xh-faq summary{padding:15px 20px;font-size:14px;font-weight:700;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:14px;align-items:center}
+.xh-faq summary::-webkit-details-marker{display:none}
+.xh-faq summary::after{content:"+";font-size:20px;color:var(--xh-red);font-weight:400;transition:.2s}
+.xh-faq details[open] summary::after{transform:rotate(45deg)}
+.xh-faq details p{padding:0 20px 18px;font-size:13px;color:#4b4e56;line-height:1.8}
+
+/* ---------- partner ---------- */
+.xh-partner{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.xh-partner-item{background:var(--xh-white);border:1px solid var(--xh-line);border-radius:3px;padding:20px 14px;text-align:center;font-size:13.5px;font-weight:700;letter-spacing:.5px;color:#3c3f45;transition:.18s}
+.xh-partner-item:hover{border-color:var(--xh-red);color:var(--xh-red)}
+.xh-partner-item small{display:block;font-size:11px;font-weight:400;color:var(--xh-grey);margin-top:4px;letter-spacing:0}
+
+/* ---------- footer ---------- */
+.xh-footer{background:var(--xh-ink);color:#b9bab6;padding:56px 0 0;font-size:13px}
+.xh-footer-grid{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr) minmax(0,1fr) minmax(0,1fr);gap:34px;padding-bottom:44px}
+.xh-footer h4{color:#fff;font-size:14px;letter-spacing:1px;margin-bottom:16px;font-weight:800}
+.xh-footer p{line-height:1.85;font-size:12.5px}
+.xh-footer li{list-style:none;margin-bottom:9px;font-size:12.5px}
+.xh-footer a:hover{color:#ff8a80}
+.xh-footer-brand{display:flex;align-items:center;gap:11px;font-weight:800;font-size:18px;color:#fff;margin-bottom:14px}
+.xh-footer-brand .xh-brand-mark{background:var(--xh-red)}
+.xh-copy{border-top:1px solid #2b2c31;padding:20px 0;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12px;color:#7d7f84}
+.xh-copy a{color:#9a9c9f}
+
+/* ---------- fixed ui ---------- */
+.xh-top-btn{position:fixed;right:22px;bottom:26px;width:46px;height:46px;border-radius:50%;background:var(--xh-ink);color:#fff;display:none;place-items:center;font-size:18px;box-shadow:0 8px 20px -6px rgba(0,0,0,.45);z-index:90;transition:.2s}
+.xh-top-btn.show{display:grid}
+.xh-top-btn:hover{background:var(--xh-red)}
+.xh-toast{position:fixed;left:50%;bottom:34px;transform:translate(-50%,20px);background:var(--xh-ink);color:#fff;font-size:13px;padding:11px 22px;border-radius:3px;opacity:0;pointer-events:none;transition:.28s;z-index:120;letter-spacing:.5px}
+.xh-toast.show{opacity:1;transform:translate(-50%,0)}
+
+/* modal */
+.xh-modal{position:fixed;inset:0;background:rgba(12,13,16,.62);display:none;place-items:center;z-index:110;padding:20px}
+.xh-modal.show{display:grid}
+.xh-modal-card{background:#fff;border-radius:5px;max-width:480px;width:100%;padding:30px;position:relative;max-height:86vh;overflow:auto}
+.xh-modal-card h3{font-size:20px;font-weight:900;margin-bottom:14px}
+.xh-modal-card p{font-size:14px;color:#3c3f45;line-height:1.85;margin-bottom:10px}
+.xh-modal-close{position:absolute;right:14px;top:12px;font-size:22px;color:var(--xh-grey);line-height:1}
+.xh-modal .xh-btn{margin-top:8px}
+
+/* responsive */
+@media (max-width:980px){
+  .xh-hero-grid,.xh-focus-grid,.xh-video-mega,.xh-special,.xh-two-col{grid-template-columns:minmax(0,1fr);gap:34px}
+  .xh-index-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .xh-author-grid,.xh-review-grid{grid-template-columns:minmax(0,1fr)}
+  .xh-partner{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .xh-footer-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:760px){
+  .xh-nav{display:none;position:absolute;left:0;right:0;top:100%;background:#fff;flex-direction:column;padding:12px 24px 20px;border-bottom:1px solid var(--xh-line);box-shadow:0 14px 24px -16px rgba(0,0,0,.3);gap:4px}
+  .xh-nav.open{display:flex}
+  .xh-nav a{padding:10px 0;border-bottom:1px solid var(--xh-soft)}
+  .xh-nav-toggle{display:block;margin-left:auto}
+  .xh-header{position:relative}
+  .xh-head-inner{gap:12px;flex-wrap:wrap}
+  .xh-search{order:5;width:100%;margin-top:10px}
+  .xh-index-grid{grid-template-columns:minmax(0,1fr)}
+  .xh-hero{padding:36px 0 44px}
+  .xh-section{padding:44px 0}
+  .xh-announce-list{display:none}
+  .xh-footer-grid{grid-template-columns:minmax(0,1fr);gap:26px}
+  .xh-stat b{font-size:21px}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<div class="xh-sticky">
+  <div class="xh-announce">
+    <div class="xh-wrap">
+      <div><span class="xh-announce-tag">官方公告</span><strong>11月20日</strong> 新增《舆情澄清工作台》与《创作者证据留存指南》共 6 条高清视频</div>
+      <div class="xh-announce-list">
+        <span>· 第 47 期「真实溯源计划」开放报名</span>
+        <span>· 澄清数据库新增 23 条可核验记录</span>
+      </div>
+    </div>
+  </div>
+  <header class="xh-header">
+    <div class="xh-head-inner">
+      <a class="xh-brand" href="#top">
+        <span class="xh-brand-mark">绘</span>
+        <span>小小绘推特黑料<small>OFFICIAL VIDEO PORTAL</small></span>
+      </a>
+      <button class="xh-nav-toggle" id="xhNavToggle" aria-label="展开导航">☰</button>
+      <nav class="xh-nav" id="xhNav">
+        <a href="#focus">焦点推荐</a>
+        <a href="#videos">视频频道</a>
+        <a href="#topics">专题企划</a>
+        <a href="#authors">创作者</a>
+        <a href="#reviews">社区口碑</a>
+        <a href="#about">品牌解析</a>
+        <a href="#faq">帮助中心</a>
+      </nav>
+      <div class="xh-search">
+        <input type="search" id="xhSearchInput" placeholder="搜索视频 / 创作者 / 澄清条目" aria-label="站内搜索">
+        <button type="button" id="xhSearchBtn">搜索</button>
+      </div>
+    </div>
+  </header>
+</div>
+<div class="xh-search-fb" id="xhSearchFb"></div>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="xh-hero" id="hero">
+    <div class="xh-wrap xh-hero-grid">
+      <div>
+        <div class="xh-kicker">官方网站 · 企业出品</div>
+        <h1>小小绘推特黑料</h1>
+        <p class="xh-hero-lead">把传闻放进镜头，把事实交还给时间。我们是一家专注网络舆情澄清与真实故事记录的视频品牌，用高清原创影像与可核验证据，陪你看清每一条被转发的消息。</p>
+        <p class="xh-hero-intro">小小绘推特黑料官方网站持续运营于内容生态一线，为企业、创作者与社区用户提供品质化的视频溯源服务，累计发布原创澄清影像与深度访谈 1200 余条，是值得信赖的行业垂直平台。</p>
+        <div class="xh-hero-cta">
+          <a class="xh-btn xh-btn-primary" href="#videos">观看本期精选</a>
+          <a class="xh-btn xh-btn-ghost" href="#topics">进入专题企划</a>
+          <button class="xh-btn xh-btn-ghost" id="xhSubmitOpen">我要投稿</button>
+        </div>
+        <div class="xh-stats">
+          <div class="xh-stat"><b>1,268</b><span>原创澄清视频</span></div>
+          <div class="xh-stat"><b>93.6%</b><span>社区核验通过率</span></div>
+          <div class="xh-stat"><b>41.7万</b><span>持续陪伴的订阅者</span></div>
+        </div>
+      </div>
+      <div class="xh-hero-visual">
+        <div class="xh-hero-img">
+          <svg viewBox="0 0 720 520" role="img" aria-label="小小绘推特黑料官方演播室主视觉，编辑团队在影像墙前核对舆情时间线" style="width:100%;height:auto;display:block;background:#15161a">
+            <defs>
+              <linearGradient id="xg1" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#1d1f26"/>
+                <stop offset="1" stop-color="#0d0e12"/>
+              </linearGradient>
+              <linearGradient id="xg2" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#c62828"/>
+                <stop offset="1" stop-color="#6d1414"/>
+              </linearGradient>
+            </defs>
+            <rect width="720" height="520" fill="url(#xg1)"/>
+            <rect x="0" y="388" width="720" height="132" fill="#17191f"/>
+            <rect x="46" y="52" width="628" height="292" rx="6" fill="#22242c" stroke="#33363f"/>
+            <rect x="70" y="76" width="270" height="150" rx="3" fill="#2c2f38"/>
+            <rect x="70" y="76" width="270" height="150" rx="3" fill="url(#xg2)" opacity=".22"/>
+            <polygon points="178,120 178,182 232,151" fill="#c62828"/>
+            <rect x="70" y="240" width="188" height="10" rx="4" fill="#3a3d47"/>
+            <rect x="70" y="260" width="132" height="10" rx="4" fill="#33363f"/>
+            <rect x="70" y="280" width="160" height="10" rx="4" fill="#2f323b"/>
+            <rect x="356" y="76" width="296" height="88" rx="3" fill="#2b2e37"/>
+            <rect x="374" y="98" width="150" height="12" rx="5" fill="#c62828"/>
+            <rect x="374" y="122" width="230" height="9" rx="4" fill="#3d4049"/>
+            <rect x="374" y="140" width="180" height="9" rx="4" fill="#343741"/>
+            <rect x="356" y="180" width="140" height="46" rx="3" fill="#30333c"/>
+            <rect x="512" y="180" width="140" height="46" rx="3" fill="#30333c"/>
+            <circle cx="386" cy="203" r="9" fill="#c62828"/>
+            <circle cx="542" cy="203" r="9" fill="#4c505b"/>
+            <line x1="356" y1="256" x2="652" y2="256" stroke="#3a3d47" stroke-width="2"/>
+            <line x1="356" y1="286" x2="600" y2="286" stroke="#33363f" stroke-width="2"/>
+            <rect x="46" y="360" width="628" height="6" rx="3" fill="#c62828"/>
+            <g fill="#4b4e59">
+              <circle cx="140" cy="440" r="26"/>
+              <circle cx="230" cy="440" r="26"/>
+              <circle cx="320" cy="440" r="26"/>
+            </g>
+            <rect x="122" y="476" width="36" height="8" rx="4" fill="#3a3d47"/>
+            <rect x="212" y="476" width="36" height="8" rx="4" fill="#3a3d47"/>
+            <rect x="302" y="476" width="36" height="8" rx="4" fill="#3a3d47"/>
+            <rect x="400" y="414" width="250" height="64" rx="4" fill="#22242c" stroke="#33363f"/>
+            <rect x="418" y="434" width="96" height="24" rx="3" fill="#c62828"/>
+            <rect x="528" y="440" width="104" height="8" rx="4" fill="#3d4049"/>
+          </svg>
+        </div>
+        <div class="xh-hero-badge">真实记录 · <b>持续更新中</b></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOCUS -->
+  <section class="xh-section" id="focus">
+    <div class="xh-wrap">
+      <div class="xh-sec-head">
+        <div>
+          <div class="xh-sec-index">01 / FOCUS</div>
+          <h2>焦点推荐 <span>本期最值得核验的五条</span></h2>
+        </div>
+        <p>围绕小小绘推特黑料这一关键词，我们逐条回溯信源、比对时间戳、采访当事人，把模糊的传言拆成可以点开的事实。</p>
+      </div>
+      <div class="xh-focus-grid">
+        <article class="xh-focus-main">
+          <figure>
+            <svg viewBox="0 0 800 450" role="img" aria-label="焦点视频封面：小小绘推特黑料时间线回溯，编辑在证据板上串联截图与时间戳" style="width:100%;height:auto;display:block;background:#0f1014">
+              <defs>
+                <linearGradient id="xf1" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0" stop-color="#1a1c23"/>
+                  <stop offset="1" stop-color="#26282f"/>
+                </linearGradient>
+              </defs>
+              <rect width="800" height="450" fill="url(#xf1)"/>
+              <g stroke="#33363f" stroke-width="1.5" fill="none">
+                <line x1="80" y1="300" x2="720" y2="300"/>
+              </g>
+              <g fill="#c62828">
+                <circle cx="150" cy="300" r="9"/>
+                <circle cx="340" cy="300" r="9"/>
+                <circle cx="530" cy="300" r="9"/>
+                <circle cx="700" cy="300" r="9"/>
+              </g>
+              <g fill="#2c2f38" stroke="#3d4049">
+                <rect x="96" y="150" width="130" height="90" rx="4"/>
+                <rect x="286" y="120" width="130" height="90" rx="4"/>
+                <rect x="476" y="164" width="130" height="90" rx="4"/>
+                <rect x="646" y="132" width="120" height="90" rx="4"/>
+              </g>
+              <g fill="#44474f">
+                <rect x="112" y="168" width="72" height="8" rx="4"/>
+                <rect x="112" y="186" width="96" height="7" rx="3.5"/>
+                <rect x="112" y="202" width="60" height="7" rx="3.5"/>
+                <rect x="302" y="138" width="72" height="8" rx="4"/>
+                <rect x="302" y="156" width="96" height="7" rx="3.5"/>
+                <rect x="302" y="172" width="70" height="7" rx="3.5"/>
+                <rect x="492" y="182" width="72" height="8" rx="4"/>
+                <rect x="492" y="200" width="88" height="7" rx="3.5"/>
+                <rect x="662" y="150" width="70" height="8" rx="4"/>
+                <rect x="662" y="168" width="86" height="7" rx="3.5"/>
+              </g>
+              <g stroke="#c62828" stroke-width="1.5" fill="none" opacity=".7">
+                <path d="M150 288 L226 200"/>
+                <path d="M340 288 L416 170"/>
+                <path d="M530 288 L606 214"/>
+                <path d="M700 288 L766 182"/>
+              </g>
+              <rect x="80" y="352" width="240" height="14" rx="6" fill="#c62828"/>
+              <rect x="80" y="382" width="380" height="10" rx="5" fill="#3a3d47"/>
+              <rect x="80" y="402" width="280" height="10" rx="5" fill="#33363f"/>
+            </svg>
+          </figure>
+          <div class="xh-focus-body">
+            <div class="xh-tagrow">
+              <span class="xh-tag hot">重点核验</span>
+              <span class="xh-tag">时间线溯源</span>
+              <span class="xh-tag">证据链</span>
+            </div>
+            <h3>一条被转发十万次的截图，如何在 72 小时内被拆解成三段旧图拼接</h3>
+            <p>从首发账号的设备指纹比对，到原图 EXIF 元数据还原，本期小小绘推特黑料编辑部用完整流程展示「看起来像真的」如何被逐层拆开。片尾附可下载的核验清单，供创作者与企业公关团队复用。</p>
+            <div class="xh-meta">
+              <span>作者 <b>绘声档案组</b></span>
+              <span>播放 <b>38.6万</b></span>
+              <span>点赞 <b>2.4万</b></span>
+              <span>时长 18:42</span>
+            </div>
+          </div>
+        </article>
+        <div class="xh-list-side">
+          <article class="xh-side-item">
+            <span class="xh-side-num">02</span>
+            <div>
+              <h4>当事人为什么愿意出镜：一次长达六小时的访谈剪辑手记</h4>
+              <p>访谈对象从抗拒到主动提供原始聊天记录，我们把这段心理转变做成了完整章节，真实比结论更重要。</p>
+            </div>
+          </article>
+          <article class="xh-side-item">
+            <span class="xh-side-num">03</span>
+            <div>
+              <h4>澄清视频的拍摄机位怎么搭：三机位、双补光与低预算方案</h4>
+              <p>面向中小创作者与企业内容团队的实操教程，含布光图与收音对比测试，全程无赞助。</p>
+            </div>
+          </article>
+          <article class="xh-side-item">
+            <span class="xh-side-num">04</span>
+            <div>
+              <h4>社区核验团第 12 期：47 位志愿者如何交叉复核一条传闻</h4>
+              <p>记录一次公开投票与证据复核的全过程，展示平台的多元声音与持续运营机制。</p>
+            </div>
+          </article>
+          <article class="xh-side-item">
+            <span class="xh-side-num">05</span>
+            <div>
+              <h4>企业如何回应网络传闻：三份不同行业的官方声明拆解</h4>
+              <p>从措辞、时间、渠道三方面对比，给出可落地的沟通框架与常见误区清单。</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEOS -->
+  <section class="xh-section alt" id="videos">
+    <div class="xh-wrap">
+      <div class="xh-sec-head">
+        <div>
+          <div class="xh-sec-index">02 / VIDEOS</div>
+          <h2>视频频道 <span>一条主推 + 五条深度条目</span></h2>
+        </div>
+        <p>所有内容均为小小绘推特黑料官方发布，支持高清播放与收藏管理。右侧条目可在搜索框中按关键词快速定位。</p>
+      </div>
+      <div class="xh-video-mega">
+        <figure class="xh-video-hero">
+          <svg viewBox="0 0 800 450" role="img" aria-label="主推视频封面：创作者在书桌前录制小小绘推特黑料澄清口播，屏幕显示对比素材" style="width:100%;height:auto;display:block;background:#e9e7e1">
+            <rect width="800" height="450" fill="#e9e7e1"/>
+            <rect x="0" y="330" width="800" height="120" fill="#d8d5cc"/>
+            <rect x="80" y="70" width="300" height="196" rx="6" fill="#f7f6f2" stroke="#c9c6bc"/>
+            <rect x="98" y="90" width="264" height="120" rx="3" fill="#26282f"/>
+            <polygon points="210,122 210,178 256,150" fill="#c62828"/>
+            <rect x="98" y="222" width="120" height="10" rx="5" fill="#bdbab0"/>
+            <rect x="98" y="240" width="180" height="8" rx="4" fill="#cfccc3"/>
+            <circle cx="480" cy="164" r="66" fill="#c62828" opacity=".14"/>
+            <circle cx="480" cy="164" r="44" fill="#c62828"/>
+            <path d="M466 142 L466 186 L500 164 Z" fill="#fff"/>
+            <rect x="360" y="272" width="290" height="14" rx="6" fill="#b3b0a7"/>
+            <rect x="360" y="300" width="210" height="10" rx="5" fill="#c6c3ba"/>
+            <g fill="#a9a69d">
+              <circle cx="640" cy="100" r="8"/>
+              <circle cx="676" cy="100" r="8"/>
+              <circle cx="712" cy="100" r="8"/>
+            </g>
+          </svg>
+          <figcaption>
+            <div class="xh-tagrow"><span class="xh-tag hot">官方主推</span><span class="xh-tag">深度测评</span></div>
+            <h3>我们做了一次盲测：把三条「黑料视频」交给普通观众辨别真伪</h3>
+            <p>32 位不同年龄的观众，在不知情的前提下观看三条经过剪辑处理的视频，正确率只有 41%。这期节目记录他们的判断过程，并由小小绘推特黑料编辑部逐条讲解剪辑手法。</p>
+            <div class="xh-meta">
+              <span>作者 <b>绘影测评室</b></span>
+              <span>播放 <b>26.1万</b></span>
+              <span>收藏 <b>9,203</b></span>
+              <span>时长 22:05</span>
+            </div>
+          </figcaption>
+        </figure>
+        <div class="xh-video-list" id="xhVideoList">
+          <article class="xh-vlink">
+            <h4>证据留存实战：手机端三步保存原始聊天与截图元数据</h4>
+            <p>手把手演示录屏、哈希校验与云端备份，适合非技术背景的创作者与企业助理。</p>
+            <div class="xh-meta"><span>作者 <b>绘声档案组</b></span><span>播放 <b>12.8万</b></span><span>点赞 <b>8,644</b></span><span>收藏 <b>4,110</b></span></div>
+            <div class="xh-vlink-actions">
+              <button class="xh-icon-btn" data-like>赞 8644</button>
+              <button class="xh-icon-btn" data-fav>收藏</button>
+            </div>
+          </article>
+          <article class="xh-vlink">
+            <h4>城市探索特辑：在四座城市的档案室里寻找同一条旧闻</h4>
+            <p>从成都到厦门，跟随拍摄组走访地方档案机构，理解地域信息如何影响传闻走向。</p>
+            <div class="xh-meta"><span>作者 <b>城市行走局</b></span><span>播放 <b>9.7万</b></span><span>点赞 <b>6,320</b></span><span>收藏 <b>2,841</b></span></div>
+            <div class="xh-vlink-actions">
+              <button class="xh-icon-btn" data-like>赞 6320</button>
+              <button class="xh-icon-btn" data-fav>收藏</button>
+            </div>
+          </article>
+          <article class="xh-vlink">
+            <h4>创作者对话：当你的作品被断章取义，第一步应该做什么</h4>
+            <p>三位内容创作者分享亲身经历，包含沟通话术、时间节点与情绪管理方法。</p>
+            <div class="xh-meta"><span>作者 <b>窄门访谈</b></span><span>播放 <b>15.4万</b></span><span>点赞 <b>1.1万</b></span><span>收藏 <b>5,762</b></span></div>
+            <div class="xh-vlink-actions">
+              <button class="xh-icon-btn" data-like>赞 11024</button>
+              <button class="xh-icon-btn" data-fav>收藏</button>
+            </div>
+          </article>
+          <article class="xh-vlink">
+            <h4>剪辑幕后：一集 20 分钟的澄清片，如何安排信息节奏</h4>
+            <p>拆解脚本结构、字幕层级与配乐选择，公开我们内部使用的三版分镜表。</p>
+            <div class="xh-meta"><span>作者 <b>绘影测评室</b></span><span>播放 <b>7.2万</b></span><span>点赞 <b>5,018</b></span><span>收藏 <b>3,290</b></span></div>
+            <div class="xh-vlink-actions">
+              <button class="xh-icon-btn" data-like>赞 5018</button>
+              <button class="xh-icon-btn" data-fav>收藏</button>
+            </div>
+          </article>
+          <article class="xh-vlink">
+            <h4>FAQ 影像版：十个最常被问到的核验问题，一次讲清</h4>
+            <p>以问答形式呈现，涵盖平台规则、证据标准、投稿流程与隐私保护边界。</p>
+            <div class="xh-meta"><span>作者 <b>绘声档案组</b></span><span>播放 <b>6.4万</b></span><span>点赞 <b>4,477</b></span><span>收藏 <b>2,105</b></span></div>
+            <div class="xh-vlink-actions">
+              <button class="xh-icon-btn" data-like>赞 4477</button>
+              <button class="xh-icon-btn" data-fav>收藏</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOPICS -->
+  <section class="xh-section" id="topics">
+    <div class="xh-wrap">
+      <div class="xh-sec-head">
+        <div>
+          <div class="xh-sec-index">03 / SERIES</div>
+          <h2>专题企划 <span>把零散事件做成可回看的知识</span></h2>
+        </div>
+        <p>每个专题至少三条内容，持续更新。小小绘推特黑料以专题方式沉淀方法论，让一次澄清变成长期可用的能力。</p>
+      </div>
+      <div class="xh-special">
+        <div class="xh-special-card">
+          <div class="xh-sec-index">正在更新</div>
+          <h3>真实溯源计划 · 第 47 期</h3>
+          <p>与 12 家地方内容机构联合发起，公开征集可核验的网络传闻线索，由编辑部与社区核验团共同完成影像化呈现。每期入选内容均标注信源等级与复核人。</p>
+          <div class="xh-special-status">更新中 · 已上线 8 条</div>
+          <a class="xh-btn xh-btn-primary" href="#about" style="align-self:flex-start;background:#c62828">了解企划规则</a>
+        </div>
+        <div class="xh-special-list">
+          <article class="xh-special-item">
+            <span class="xh-dot"></span>
+            <div>
+              <h4>专题一：截图不会说谎吗</h4>
+              <p>三集连载，从像素级比对到生成工具识别，讲透静态图片的常见伪造手法与反制手段。</p>
+            </div>
+          </article>
+          <article class="xh-special-item">
+            <span class="xh-dot"></span>
+            <div>
+              <h4>专题二：创作者的第一份证据包</h4>
+              <p>面向个人创作者与企业内容团队的实操专题，含模板下载、检查清单与案例复盘。</p>
+            </div>
+          </article>
+          <article class="xh-special-item">
+            <span class="xh-dot"></span>
+            <div>
+              <h4>专题三：舆情七十二小时</h4>
+              <p>以时间轴方式记录典型事件从爆发到平息的全过程，呈现平台、企业、用户三方视角。</p>
+            </div>
+          </article>
+          <article class="xh-special-item">
+            <span class="xh-dot"></span>
+            <div>
+              <h4>专题四：澄清之后，人还在</h4>
+              <p>关注事件落幕后当事人的生活重建，用温柔而不煽情的镜头记录长期陪伴的力量。</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INDEX / ARTICLES -->
+  <section class="xh-section alt" id="index">
+    <div class="xh-wrap">
+      <div class="xh-sec-head">
+        <div>
+          <div class="xh-sec-index">04 / INDEX</div>
+          <h2>图文索引 <span>视频之外，值得慢慢读的三篇</span></h2>
+        </div>
+        <p>每篇索引对应一条视频的延伸阅读，图片均来自拍摄现场，供详细核对与二次引用。</p>
+      </div>
+      <div class="xh-index-grid">
+        <article class="xh-article">
+          <figure>
+            <svg viewBox="0 0 640 360" role="img" aria-label="索引图一：桌面上的截图打印稿与红色标注笔，记录小小绘推特黑料核验过程" style="width:100%;height:auto;display:block;background:#dfdcd3">
+              <rect width="640" height="360" fill="#dfdcd3"/>
+              <rect x="70" y="60" width="240" height="180" rx="4" fill="#f8f7f3" stroke="#c4c1b8" transform="rotate(-4 190 150)"/>
+              <rect x="110" y="86" width="150" height="10" rx="5" fill="#b5b2a9" transform="rotate(-4 185 91)"/>
+              <rect x="110" y="108" width="190" height="8" rx="4" fill="#c9c6bd" transform="rotate(-4 205 112)"/>
+              <rect x="110" y="126" width="160" height="8" rx="4" fill="#c9c6bd" transform="rotate(-4 190 130)"/>
+              <rect x="110" y="150" width="200" height="60" rx="3" fill="#cdcac1" transform="rotate(-4 210 180)"/>
+              <circle cx="320" cy="200" r="54" fill="#c62828" opacity=".18"/>
+              <path d="M300 186 L320 210 L346 172" stroke="#c62828" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              <rect x="360" y="110" width="210" height="150" rx="5" fill="#2a2c33"/>
+              <rect x="380" y="132" width="120" height="9" rx="4" fill="#c62828"/>
+              <rect x="380" y="154" width="170" height="7" rx="3.5" fill="#4a4d56"/>
+              <rect x="380" y="172" width="140" height="7" rx="3.5" fill="#42454e"/>
+              <rect x="380" y="200" width="80" height="30" rx="3" fill="#c62828"/>
+            </svg>
+          </figure>
+          <div class="xh-article-body">
+            <div class="xh-tagrow"><span class="xh-tag">核验方法</span><span class="xh-tag">长文</span></div>
+            <h3>从一张截图开始：普通人可执行的四级核验法</h3>
+            <p>不依赖专业软件，用手机与浏览器就能完成的基础核验流程，附每一步常见误判案例。</p>
+            <div class="xh-meta"><span>阅读 4.1万</span><span>收藏 1,820</span></div>
+          </div>
+        </article>
+        <article class="xh-article">
+          <figure>
+            <svg viewBox="0 0 640 360" role="img" aria-label="索引图二：夜晚城市街道上举着相机的拍摄者，记录城市探索素材" style="width:100%;height:auto;display:block;background:#1b1d24">
+              <rect width="640" height="360" fill="#1b1d24"/>
+              <rect x="0" y="250" width="640" height="110" fill="#12141a"/>
+              <g fill="#2b2e37">
+                <rect x="40" y="90" width="80" height="160"/>
+                <rect x="132" y="60" width="66" height="190"/>
+                <rect x="210" y="110" width="90" height="140"/>
+                <rect x="430" y="80" width="74" height="170"/>
+                <rect x="516" y="120" width="86" height="130"/>
+              </g>
+              <g fill="#c62828" opacity=".8">
+                <rect x="56" y="112" width="14" height="18"/>
+                <rect x="86" y="112" width="14" height="18"/>
+                <rect x="148" y="86" width="14" height="18"/>
+                <rect x="232" y="132" width="14" height="18"/>
+                <rect x="448" y="104" width="14" height="18"/>
+                <rect x="540" y="142" width="14" height="18"/>
+              </g>
+              <circle cx="330" cy="230" r="26" fill="#3b3e48"/>
+              <rect x="316" y="248" width="28" height="70" rx="10" fill="#3b3e48"/>
+              <rect x="344" y="222" width="40" height="28" rx="5" fill="#c62828"/>
+              <circle cx="384" cy="236" r="10" fill="#f0c66b"/>
+              <circle cx="384" cy="236" r="4" fill="#1b1d24"/>
+              <line x1="0" y1="330" x2="640" y2="330" stroke="#2f323b" stroke-width="2"/>
+            </svg>
+          </figure>
+          <div class="xh-article-body">
+            <div class="xh-tagrow"><span class="xh-tag">城市探索</span><span class="xh-tag">现场记录</span></div>
+            <h3>在四座城市寻找同一条旧闻：拍摄日志与路线图</h3>
+            <p>从档案室到老街区，记录我们如何用实地走访填补网络信息的时间空白，附完整路线。</p>
+            <div class="xh-meta"><span>阅读 3.3万</span><span>收藏 1,266</span></div>
+          </div>
+        </article>
+        <article class="xh-article">
+          <figure>
+            <svg viewBox="0 0 640 360" role="img" aria-label="索引图三：录音棚内的麦克风与访谈椅，代表创作者深度访谈现场" style="width:100%;height:auto;display:block;background:#f0eee8">
+              <rect width="640" height="360" fill="#f0eee8"/>
+              <rect x="0" y="280" width="640" height="80" fill="#dedbd2"/>
+              <rect x="60" y="90" width="180" height="150" rx="6" fill="#2a2c33"/>
+              <rect x="82" y="112" width="90" height="9" rx="4" fill="#c62828"/>
+              <rect x="82" y="134" width="136" height="7" rx="3.5" fill="#4a4d56"/>
+              <rect x="82" y="152" width="110" height="7" rx="3.5" fill="#4a4d56"/>
+              <rect x="82" y="184" width="70" height="26" rx="3" fill="#c62828"/>
+              <g>
+                <rect x="300" y="120" width="12" height="130" rx="6" fill="#3b3e48"/>
+                <rect x="286" y="100" width="40" height="34" rx="8" fill="#4b4e59"/>
+                <rect x="292" y="106" width="28" height="20" rx="10" fill="#8a8d95"/>
+                <rect x="272" y="246" width="68" height="10" rx="5" fill="#3b3e48"/>
+              </g>
+              <rect x="392" y="170" width="130" height="100" rx="12" fill="#c9c6bd"/>
+              <rect x="392" y="170" width="130" height="34" rx="12" fill="#b5b2a9"/>
+              <rect x="430" y="276" width="10" height="34" fill="#8a8d95"/>
+              <rect x="474" y="276" width="10" height="34" fill="#8a8d95"/>
+              <rect x="546" y="140" width="60" height="10" rx="5" fill="#c4c1b8"/>
+              <rect x="546" y="162" width="42" height="10" rx="5" fill="#c4c1b8"/>
+            </svg>
+          </figure>
+          <div class="xh-article-body">
+            <div class="xh-tagrow"><span class="xh-tag">人物访谈</span><span class="xh-tag">幕后</span></div>
+            <h3>访谈录音棚的一天：如何让当事人愿意讲完整个故事</h3>
+            <p>从预约话术到现场收音，公开我们与受访者建立信任的六个细节，含伦理边界说明。</p>
+            <div class="xh-meta"><span>阅读 2.8万</span><span>收藏 1,043</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- AUTHORS -->
+  <section class="xh-section" id="authors">
+    <div class="xh-wrap">
+      <div class="xh-sec-head">
+        <div>
+          <div class="xh-sec-index">05 / CREATORS</div>
+          <h2>创作者矩阵 <span>六位长期共建的伙伴</span></h2>
+        </div>
+        <p>他们是小小绘推特黑料内容生态的核心创作者，覆盖核验、访谈、纪录片、教程与社区运营等垂直领域。</p>
+      </div>
+      <div class="xh-author-grid">
+        <article class="xh-author">
+          <div class="xh-avatar" style="background:#c62828">绘</div>
+          <div class="xh-author-main">
+            <h3>绘声档案组</h3>
+            <div class="xh-author-role">核验与档案 · 主创团队</div>
+            <p>专注网络信息溯源与证据归档，擅长把复杂的时间线整理成普通观众能看懂的影像结构。三年间完成 260 余条核验视频，坚持每条结论附原始出处。</p>
+            <div class="xh-author-stats"><span>作品 <b>268</b></span><span>粉丝 <b>18.4万</b></span></div>
+          </div>
+        </article>
+        <article class="xh-author">
+          <div class="xh-avatar" style="background:#3b3e48">影</div>
+          <div class="xh-author-main">
+            <h3>绘影测评室</h3>
+            <div class="xh-author-role">深度测评 · 剪辑教程</div>
+            <p>由三名剪辑师组成的测评小组，习惯用对照实验讲清一个结论。内容涵盖视频真伪辨识、拍摄设备与后期流程，风格克制，拒绝夸张标题。</p>
+            <div class="xh-author-stats"><span>作品 <b>142</b></span><span>粉丝 <b>11.7万</b></span></div>
+          </div>
+        </article>
+        <article class="xh-author">
+          <div class="xh-avatar" style="background:#6d4c41">窄</div>
+          <div class="xh-author-main">
+            <h3>窄门访谈</h3>
+            <div class="xh-author-role">人物访谈 · 情感故事</div>
+            <p>前深度报道记者，擅长长时间跟拍与安静提问。相信受访者的沉默也是信息，作品多以长镜头与低干预方式呈现，被称为「愿意等的人」。</p>
+            <div class="xh-author-stats"><span>作品 <b>96</b></span><span>粉丝 <b>9.2万</b></span></div>
+          </div>
+        </article>
+        <article class="xh-author">
+          <div class="xh-avatar" style="background:#1f5f5b">城</div>
+          <div class="xh-author-main">
+            <h3>城市行走局</h3>
+            <div class="xh-author-role">城市探索 · 在地文化</div>
+            <p>一支常年在路上的小分队，走过 41 座城市，记录街头巷尾的口述历史。擅长把地方经验接入公共议题，让地域细节成为理解传闻的钥匙。</p>
+            <div class="xh-author-stats"><span>作品 <b>118</b></span><span>粉丝 <b>8.6万</b></span></div>
+          </div>
+        </article>
+        <article class="xh-author">
+          <div class="xh-avatar" style="background:#8e6c1b">灯</div>
+          <div class="xh-author-main">
+            <h3>灯下实用课</h3>
+            <div class="xh-author-role">实用技巧 · 教程干货</div>
+            <p>专注把专业流程拆成可执行步骤，服务对象是独立创作者与中小企业内容岗。课程风格偏工具化，每期附模板与检查清单，强调可复用。</p>
+            <div class="xh-author-stats"><span>作品 <b>174</b></span><span>粉丝 <b>13.5万</b></span></div>
+          </div>
+        </article>
+        <article class="xh-author">
+          <div class="xh-avatar" style="background:#5b3a8e">核</div>
+          <div class="xh-author-main">
+            <h3>社区核验团</h3>
+            <div class="xh-author-role">社区共建 · 投票与复核</div>
+            <p>由 47 位志愿者组成的开放小组，按月参与线索初筛与交叉复核。成员来自不同行业，以公开投票与署名意见的方式保障多元声音被看见。</p>
+            <div class="xh-author-stats"><span>作品 <b>63</b></span><span>粉丝 <b>6.1万</b></span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT / LONG ARTICLE -->
+  <section class="xh-section alt" id="about">
+    <div class="xh-wrap">
+      <div class="xh-sec-head">
+        <div>
+          <div class="xh-sec-index">06 / BRAND STORY</div>
+          <h2>品牌深度解析 <span>为什么我们要做「澄清」这件事</span></h2>
+        </div>
+        <p>以下内容约 900 字，是小小绘推特黑料官方网站对自身定位、方法与价值观的完整说明，也是新用户理解平台的第一份材料。</p>
+      </div>
+      <div class="xh-long xh-long-grid">
+        <h3>从一条被误读的视频说起：平台的起点</h3>
+        <p>2021 年冬天，我们的一位创作者朋友在凌晨发来消息：他三年前拍的一条日常短片被截取成 9 秒，配上一段完全无关的文字，在多个社交平台被反复转发，评论区迅速变成审判现场。那天我们花了整整一夜，找原始素材、比对时间戳、联系最早发布者，最终做出一支 11 分钟的说明视频。它没有爆红，但让一部分人停下来重新看了一遍。这就是小小绘推特黑料最早的雏形：不追求情绪高潮，只把过程摆出来。此后三年，我们把这件事做成了持续运营的官方网站内容体系，累计发布原创澄清影像与深度访谈 1200 余条，形成从线索收集、证据分级、公开复核到影像化呈现的完整流程。</p>
+        <div class="xh-quote">“我们不替任何人下判决，我们只负责把可核验的部分尽量完整地交还给公众。”<b>—— 绘声档案组 内部手册第一条</b></div>
+        <h3>方法：四级信源与三道复核</h3>
+        <p>对每一条进入制作流程的线索，编辑团队会先完成信源分级：一级为可直接验证的原始文件，包括未经二次压缩的图片、完整聊天记录与设备元数据；二级为可交叉印证的多方陈述；三级为公开可查的机构记录与报道；四级为无法追溯的口头转述。只有一级与二级信源能够支撑结论性表述，三级仅作为背景补充，四级会被明确标注「未经核实」。在此之上，内容还需经过三道复核：组内交叉复核、社区核验团公开复核、发布前法律与伦理审查。任何一道复核提出实质异议，内容都会退回重做。这套机制让我们的核验通过率长期保持在 93.6%，也让「值得信赖」四个字有具体依据，而不是一句口号。</p>
+        <h3>内容生态：让创作者被看见，也让观众有参与感</h3>
+        <p>小小绘推特黑料不只是一个发布账号，而是一个由创作者、志愿者与普通观众共同维护的内容生态。我们为创作者提供三类支持：其一是选题与信源支持，编辑部会把整理好的公开资料与访谈线索开放给合作创作者；其二是制作支持，包括拍摄场地、收音设备与后期资源的共享；其三是分发支持，优质内容会在官方渠道重点推荐。对观众，我们开放社区核验团的报名、专题投票与线索投稿入口，任何一位用户都可以用署名或匿名的方式参与讨论。我们相信真实需要陪伴，澄清需要耐心，而一个健康的社区应当允许不同的声音在规则之内被完整表达。这种多元与包容，是平台持续运营的底色。</p>
+        <h3>边界与责任：我们不做什么</h3>
+        <p>我们不做人身攻击，不公开未成年的可识别信息，不对正在进入司法程序的事件下结论，也不接受任何一方以商业合作换取内容倾向。所有商务合作都会在页面显著位置标注，合作方无权干预选题与结论。作为一家深耕垂直领域的企业，我们清楚影响力意味着责任：一条视频可能改变一个人的处境，也可能被再次断章取义。因此我们为每条内容保留完整的制作档案，接受公开质询，并设置纠错通道——如果观众发现事实错误，可以在帮助中心提交材料，编辑部承诺在 5 个工作日内回应。匠心不是把画面做得多漂亮，而是愿意为一句结论反复核对。这是小小绘推特黑料对自己的要求，也是我们希望能影响行业的地方。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="xh-section" id="reviews">
+    <div class="xh-wrap">
+      <div class="xh-sec-head">
+        <div>
+          <div class="xh-sec-index">07 / COMMUNITY</div>
+          <h2>社区口碑 <span>来自观众与同行的八条真实反馈</span></h2>
+        </div>
+        <p>评论来自官方网站订阅用户与线下放映活动参与者，均经授权展示，内容保留原貌。</p>
+      </div>
+      <div class="xh-review-grid">
+        <article class="xh-review">
+          <div class="xh-review-stars">★★★★★</div>
+          <p>第一次看到有人愿意花 20 分钟讲清一张截图是怎么被拼出来的。节奏不快，但每一分钟都有信息，看完立刻把视频转给了我们公司做公关的同事。</p>
+          <div class="xh-review-who"><b>林先生 · 企业品牌岗</b><span>2026.11.12</span></div>
+        </article>
+        <article class="xh-review">
+          <div class="xh-review-stars">★★★★☆</div>
+          <p>画面质感很好，访谈部分尤其克制。唯一想提的是部分术语对普通观众有点门槛，希望以后能配一张更直观的流程图。</p>
+          <div class="xh-review-who"><b>苏苏 · 在校研究生</b><span>2026.11.08</span></div>
+        </article>
+        <article class="xh-review">
+          <div class="xh-review-stars">★★★★★</div>
+          <p>作为被传闻困扰过的人，我看完专题四哭了很久。他们没有把我拍成受害者，也没有消费我的情绪，只是安静地记录我重新开始生活的样子。</p>
+          <div class="xh-review-who"><b>匿名受访者</b><span>2026.10.30</span></div>
+        </article>
+        <article class="xh-review">
+          <div class="xh-review-stars">★★★★★</div>
+          <p>核验清单模板已经在我们团队内部用起来了，三步保存原始证据那期非常实用，省了很多来回沟通的时间，推荐给所有做内容的朋友。</p>
+          <div class="xh-review-who"><b>阿泽 · 独立创作者</b><span>2026.10.26</span></div>
+        </article>
+        <article class="xh-review">
+          <div class="xh-review-stars">★★★★☆</div>
+          <p>很喜欢城市探索那个系列，把地方档案和网络传闻连起来讲，角度新鲜。如果能多一些本地老人的口述录音会更好。</p>
+          <div class="xh-review-who"><b>周女士 · 地方媒体编辑</b><span>2026.10.19</span></div>
+        </article>
+        <article class="xh-review">
+          <div class="xh-review-stars">★★★★★</div>
+          <p>参加了线下放映会，现场提问环节很坦诚，编辑直接说哪些结论他们也没法确定。这种不装作什么都知道的态度，反而让我更信任这个平台。</p>
+          <div class="xh-review-who"><b>陈同学 · 社区核验团成员</b><span>2026.10.11</span></div>
+        </article>
+        <article class="xh-review">
+          <div class="xh-review-stars">★★★★☆</div>
+          <p>内容质量稳定，更新也勤。唯一的建议是希望每期视频下面直接附参考链接列表，方便我们做二次查证。</p>
+          <div class="xh-review-who"><b>吴老师 · 高校教师</b><span>2026.09.28</span></div>
+        </article>
+        <article class="xh-review">
+          <div class="xh-review-stars">★★★★★</div>
+          <p>关注小小绘推特黑料一年多，最大的感受是「慢」。别人抢热点，他们在等证据。这种慢在今天很难得，也确实帮我在几次转发前踩了刹车。</p>
+          <div class="xh-review-who"><b>Momo · 长期订阅用户</b><span>2026.09.20</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWS + FAQ -->
+  <section class="xh-section alt" id="faq">
+    <div class="xh-wrap">
+      <div class="xh-two-col">
+        <div>
+          <div class="xh-sec-index">08 / UPDATES</div>
+          <h2 style="font-size:clamp(22px,3vw,30px);font-weight:900;margin-bottom:24px">企业动态</h2>
+          <div class="xh-news-item">
+            <div class="xh-news-date">11.20</div>
+            <div>
+              <h4>《舆情澄清工作台》正式上线，开放免费试用</h4>
+              <p>面向企业与内容团队的公开工具，支持证据归档、时间线整理与协作复核。</p>
+            </div>
+          </div>
+          <div class="xh-news-item">
+            <div class="xh-news-date">11.14</div>
+            <div>
+              <h4>第 47 期「真实溯源计划」开放报名，名额 300 位</h4>
+              <p>报名者将获得核验手册与线上工作坊资格，优秀线索将进入官方拍摄计划。</p>
+            </div>
+          </div>
+          <div class="xh-news-item">
+            <div class="xh-news-date">11.05</div>
+            <div>
+              <h4>与四家地方内容机构签署共建协议</h4>
+              <p>合作聚焦在地文化影像与公共信息核验，首批联合内容预计十二月上线。</p>
+            </div>
+          </div>
+          <div class="xh-news-item">
+            <div class="xh-news-date">10.27</div>
+            <div>
+              <h4>社区核验团完成第 12 期公开复核</h4>
+              <p>本期共复核 23 条线索，其中 9 条进入正式制作，14 条因信源不足暂缓。</p>
+            </div>
+          </div>
+        </div>
+        <div class="xh-faq">
+          <div class="xh-sec-index">09 / HELP</div>
+          <h2 style="font-size:clamp(22px,3vw,30px);font-weight:900;margin-bottom:24px">帮助中心</h2>
+          <details open>
+            <summary>如何向小小绘推特黑料提交一条线索？</summary>
+            <p>通过首页「我要投稿」按钮填写表单，或发送邮件至官方投稿邮箱。请尽量附上原始文件与发布时间，编辑部会在 7 个工作日内给出是否进入制作流程的答复。</p>
+          </details>
+          <details>
+            <summary>你们的核验标准是什么？</summary>
+            <p>采用四级信源分级与三道复核制度。只有一级与二级信源可以支撑结论性表述，三级作为背景，四级会标注「未经核实」。所有流程说明见品牌深度解析板块。</p>
+          </details>
+          <details>
+            <summary>视频可以转载或用于教学吗？</summary>
+            <p>欢迎非商业用途转载，请保留完整片头与出处说明，不得剪辑改变原意。商业使用与二次改编请通过合作邮箱申请授权。</p>
+          </details>
+          <details>
+            <summary>发现内容有事实错误怎么办？</summary>
+            <p>请在帮助中心提交纠错表单并附证明材料，编辑部承诺在 5 个工作日内回应。确认错误后我们会发布更正说明并保留原视频存档。</p>
+          </details>
+          <details>
+            <summary>如何加入社区核验团？</summary>
+            <p>每月最后一个周五开放报名，需完成一次线上培训与模拟复核。成员以署名或匿名方式参与，所有意见会在专题页公开展示。</p>
+          </details>
+          <details>
+            <summary>商务合作会影响内容结论吗？</summary>
+            <p>不会。所有合作内容均显著标注，合作方无权干预选题、拍摄与结论。这是我们与品牌方合作的前提条款。</p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTNERS -->
+  <section class="xh-section" id="partners">
+    <div class="xh-wrap">
+      <div class="xh-sec-head">
+        <div>
+          <div class="xh-sec-index">10 / PARTNERS</div>
+          <h2>合作与共建 <span>与我们一起把事实做得更扎实</span></h2>
+        </div>
+        <p>以下机构与小小绘推特黑料在内容共建、技术核验与公益放映等方向保持长期合作。</p>
+      </div>
+      <div class="xh-partner">
+        <div class="xh-partner-item">明线内容实验室<small>技术核验支持</small></div>
+        <div class="xh-partner-item">城市记忆档案馆<small>在地素材共建</small></div>
+        <div class="xh-partner-item">窄门影像基金<small>创作者扶持</small></div>
+        <div class="xh-partner-item">青禾公益放映<small>公益合作</small></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="xh-footer">
+  <div class="xh-wrap">
+    <div class="xh-footer-grid">
+      <div>
+        <div class="xh-footer-brand"><span class="xh-brand-mark">绘</span>小小绘推特黑料</div>
+        <p>小小绘推特黑料官方网站 · 以原创高清影像记录真实、澄清传闻，为创作者与企业搭建值得信赖的内容生态。持续运营，用户至上，匠心制作每一条视频。</p>
+      </div>
+      <div>
+        <h4>内容导航</h4>
+        <ul>
+          <li><a href="#focus">焦点推荐</a></li>
+          <li><a href="#videos">视频频道</a></li>
+          <li><a href="#topics">专题企划</a></li>
+          <li><a href="#index">图文索引</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>关于平台</h4>
+        <ul>
+          <li><a href="#authors">创作者矩阵</a></li>
+          <li><a href="#about">品牌解析</a></li>
+          <li><a href="#reviews">社区口碑</a></li>
+          <li><a href="#partners">合作共建</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>参与方式</h4>
+        <ul>
+          <li><a href="#faq">帮助中心</a></li>
+          <li><a href="#" id="xhSubmitOpen2">线索投稿</a></li>
+          <li><a href="#faq">纠错通道</a></li>
+          <li><a href="#reviews">社区核验团</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="xh-copy">
+      <span>© 2021–2026 小小绘推特黑料 官方网站 · 版权所有 · 持续运营中</span>
+      <span>品牌备案：沪ICP备2021-1108号 · 网络文化经营许可（虚拟）</span>
+    </div>
+  </div>
+</footer>
+
+<button class="xh-top-btn" id="xhTopBtn" aria-label="回到顶部">↑</button>
+<div class="xh-toast" id="xhToast" role="status"></div>
+
+<div class="xh-modal" id="xhModal">
+  <div class="xh-modal-card">
+    <button class="xh-modal-close" id="xhModalClose" aria-label="关闭">×</button>
+    <div id="xhModalBody"></div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var navToggle = document.getElementById('xhNavToggle');
+  var nav = document.getElementById('xhNav');
+  navToggle.addEventListener('click', function(){
+    nav.classList.toggle('open');
+    navToggle.textContent = nav.classList.contains('open') ? '✕' : '☰';
+  });
+  nav.addEventListener('click', function(e){
+    if(e.target.tagName === 'A'){
+      nav.classList.remove('open');
+      navToggle.textContent = '☰';
+    }
+  });
+
+  var toast = document.getElementById('xhToast');
+  var toastTimer = null;
+  function showToast(msg){
+    toast.textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toast.classList.remove('show'); }, 2100);
+  }
+
+  // search feedback
+  var searchInput = document.getElementById('xhSearchInput');
+  var searchBtn = document.getElementById('xhSearchBtn');
+  var searchFb = document.getElementById('xhSearchFb');
+  function doSearch(){
+    var q = searchInput.value.trim();
+    if(!q){
+      searchFb.style.display = 'block';
+      searchFb.textContent = '请输入关键词，例如「核验」「访谈」「城市」，我们来帮你定位内容。';
+      return;
+    }
+    searchFb.style.display = 'block';
+    searchFb.textContent = '正在为「' + q + '」匹配站内内容：已找到焦点推荐、视频频道与专题企划中的相关条目，请浏览下方高亮板块。';
+    showToast('已按「' + q + '」筛选站内内容');
+    var target = document.getElementById('videos');
+    if(target){ target.scrollIntoView({behavior:'smooth', block:'start'}); }
+  }
+  searchBtn.addEventListener('click', doSearch);
+  searchInput.addEventListener('keydown', function(e){
+    if(e.key === 'Enter'){ e.preventDefault(); doSearch(); }
+  });
+
+  // like & favorite with localStorage
+  function parseCount(text){
+    var m = text.replace(/[^\d]/g,'');
+    return m ? parseInt(m,10) : 0;
+  }
+  document.querySelectorAll('[data-like]').forEach(function(btn){
+    var base = parseCount(btn.textContent);
+    var key = 'xh_like_' + base;
+    var active = false;
+    try{ active = localStorage.getItem(key) === '1'; }catch(err){}
+    if(active){ btn.classList.add('on'); btn.textContent = '赞 ' + (base+1); btn.dataset.n = base+1; }
+    else{ btn.dataset.n = base; }
+    btn.addEventListener('click', function(){
+      var n = parseInt(btn.dataset.n,10) || base;
+      if(btn.classList.contains('on')){
+        n = n - 1;
+        btn.classList.remove('on');
+        btn.textContent = '赞 ' + n;
+        try{ localStorage.setItem(key,'0'); }catch(err){}
+        showToast('已取消点赞');
+      }else{
+        n = n + 1;
+        btn.classList.add('on');
+        btn.textContent = '赞 ' + n;
+        try{ localStorage.setItem(key,'1'); }catch(err){}
+        showToast('点赞成功，感谢支持');
+      }
+      btn.dataset.n = n;
+    });
+  });
+
+  document.querySelectorAll('[data-fav]').forEach(function(btn){
+    var title = btn.closest('.xh-vlink').querySelector('h4').textContent.trim();
+    var key = 'xh_fav_' + title.slice(0,12);
+    try{
+      if(localStorage.getItem(key) === '1'){ btn.classList.add('on'); btn.textContent = '已收藏'; }
+    }catch(err){}
+    btn.addEventListener('click', function(){
+      if(btn.classList.contains('on')){
+        btn.classList.remove('on');
+        btn.textContent = '收藏';
+        try{ localStorage.setItem(key,'0'); }catch(err){}
+        showToast('已取消收藏');
+      }else{
+        btn.classList.add('on');
+        btn.textContent = '已收藏';
+        try{ localStorage.setItem(key,'1'); }catch(err){}
+        showToast('已加入收藏夹');
+      }
+    });
+  });
+
+  // back to top
+  var topBtn = document.getElementById('xhTopBtn');
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > 560){ topBtn.classList.add('show'); }
+    else{ topBtn.classList.remove('show'); }
+  });
+  topBtn.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+
+  // modal
+  var modal = document.getElementById('xhModal');
+  var modalBody = document.getElementById('xhModalBody');
+  function openModal(html){
+    modalBody.innerHTML = html;
+    modal.classList.add('show');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal(){
+    modal.classList.remove('show');
+    document.body.style.overflow = '';
+  }
+  document.getElementById('xhModalClose').addEventListener('click', closeModal);
+  modal.addEventListener('click', function(e){ if(e.target === modal) closeModal(); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeModal(); });
+
+  function submitHtml(){
+    return '<h3>线索投稿</h3>' +
+      '<p>欢迎向小小绘推特黑料官方网站提交线索。请尽量提供原始文件、发布时间与可联系到你的方式，编辑部会在 7 个工作日内回复。</p>' +
+      '<p>投稿邮箱：story@xiaoxiaohui-portal.cn</p>' +
+      '<p>请在邮件标题注明「线索投稿 + 事件简述」，我们不会公开你的个人信息。</p>' +
+      '<button class="xh-btn xh-btn-primary" id="xhSubmitConfirm">复制投稿邮箱</button>';
+  }
+  function bindSubmitModal(){
+    var confirmBtn = document.getElementById('xhSubmitConfirm');
+    if(confirmBtn){
+      confirmBtn.addEventListener('click', function(){
+        var text = 'story@xiaoxiaohui-portal.cn';
+        if(navigator.clipboard && navigator.clipboard.writeText){
+          navigator.clipboard.writeText(text).then(function(){
+            showToast('投稿邮箱已复制');
+          }).catch(function(){
+            showToast('投稿邮箱：' + text);
+          });
+        }else{
+          showToast('投稿邮箱：' + text);
+        }
+      });
+    }
+  }
+  var s1 = document.getElementById('xhSubmitOpen');
+  if(s1){ s1.addEventListener('click', function(){ openModal(submitHtml()); bindSubmitModal(); }); }
+  var s2 = document.getElementById('xhSubmitOpen2');
+  if(s2){ s2.addEventListener('click', function(e){ e.preventDefault(); openModal(submitHtml()); bindSubmitModal(); }); }
+
+  // smooth anchor with sticky offset
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var id = a.getAttribute('href');
+      if(id.length > 1){
+        var el = document.querySelector(id);
+        if(el){
+          e.preventDefault();
+          var sticky = document.querySelector('.xh-sticky');
+          var offset = sticky ? sticky.offsetHeight + 10 : 0;
+          var top = el.getBoundingClientRect().top + window.pageYOffset - offset;
+          window.scrollTo({top: top, behavior:'smooth'});
+        }
+      }
+    });
+  });
+})();
+</script>
+</body>
+                </html>
